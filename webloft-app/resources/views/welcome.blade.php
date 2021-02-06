@@ -18,7 +18,7 @@
             @else
                 <h4>Em Destaque</h4>
             @endif
-                {{-- Esta parte varre a listagem da Home --}}
+                {{-- Esta parte varre a listagem da Dashboard --}}
                 <div id="cards-container" class="row">
                         @foreach($imoveis as $imovel)
                             <div class="card col-md-3">
@@ -33,7 +33,7 @@
                             </div>
                         @endforeach
                         @if(count($imoveis) == 0)
-                            <p>Sem imóveis para o local ! <a href="/">Ver Todos</a></p>
+                            <p>Nenhum imóvel encontrado. <a href="/">Ver Todos</a></p>
                          @endif
            </div>
         </div>

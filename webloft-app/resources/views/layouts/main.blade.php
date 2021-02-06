@@ -33,17 +33,33 @@
                          <a class="nav-link active" aria-current="page" href="/imoveis">Quero Alugar</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="/imoveis/cadastrar">Quero Anunciar</a>
+                         <a class="nav-link active" href="/imoveis/cadastrar">Quero Anunciar</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="/contatos">Contatos</a>
+                         <a class="nav-link active" href="/contatos">Contatos</a>
+                     </li>
+                     @auth
+                     <li class="nav-item">
+                         <a class="nav-link active" href="/dashboard">Meus Imoveis</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Entrar</a>
+                         <form action="/logout" method="POST">
+                            @csrf
+                            <a href="/logout" class="nav-link" onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                                Sair
+                            </a>
+                         </form>
+                     </li>
+                     @endauth
+                     @guest
+                     <li class="nav-item">
+                         <a class="nav-link active" href="/login">Entrar</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cadastrar</a>
+                         <a class="nav-link active" href="/register">Cadastrar</a>
                      </li>
+                     @endguest
                 </ul>
             </div>
         </nav>    
