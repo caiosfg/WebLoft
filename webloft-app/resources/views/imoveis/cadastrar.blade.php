@@ -6,7 +6,7 @@
 
 <div id="imovel-cadastrar-container" class="col-md-6 offset-md-3">
     <h4>Cadastre seu imóvel</h4>
-      <form action="/imoveis" method="POST">
+      <form action="/imoveis" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="title">Imóvel:</label>
@@ -36,6 +36,11 @@
             <label for="title">Número:</label>
             <input type="number" class="form-control" id="numero" name="numero">
         </div>
+        <div class="form-group">
+            <label for="image">Foto:</label>
+            <input type="file" class="form-control-file" id="imagem" name="imagem">
+        </div>
+
         <input type="submit" id="cadastrar-btn" class="btn btn-primary" value="Registrar">
       </form>
 </div>

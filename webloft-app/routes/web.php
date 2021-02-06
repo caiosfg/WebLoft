@@ -17,6 +17,7 @@ use App\Http\Controllers\ContatosController;
 
 Route::get('/', [ImovelController::class, 'index']); 
 Route::get('/imoveis/cadastrar', [ImovelController::class, 'cadastrar']); 
+Route::get('/imoveis/{id}', [ImovelController::class, 'show']); 
 Route::post('/imoveis', [ImovelController::class, 'salvar']); 
 
 Route::get('/contatos', [ContatosController::class, 'faleConosco']);
@@ -28,6 +29,3 @@ Route::get('/imoveis', function () {
     return view('imoveis', ['busca' => $busca]);
 });
 
-Route::get('/imoveis/{id}', function ($id) {
-    return view('imovel', ['id' => $id]);
-});

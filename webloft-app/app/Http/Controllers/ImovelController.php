@@ -29,8 +29,24 @@ class ImovelController extends Controller
         $imovel->numero = $request->numero;
         $imovel->status = 1;
 
+        //Upload de Imagens
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName().strtotime("now").".".$extension);
+
+            $requestImage->move(public_path('img/imoveis'), $imageName);
+            $imovel->imagem = $imageName;
+        }
+
         $imovel->save();
 
-        return redirect('/');
+        return redirect('/')->with('msg', 'Imóvel cadastrado na base');
+    }
+    public function show($id){
+        $imovel = Imoveis::findOrFail($id);
+
+        return view('imoveis.show', ['imovel' => $imovel]);
     }
 }

@@ -1,0 +1,26 @@
+@extends('layouts.main')
+
+@section('title', $imovel->title)
+
+@section('content')
+
+    <div class="col-md-10 offset-md-i">
+        <div class="row">
+            <div id="image-container" class="col-md-6">
+                <img src="/img/imoveis/{{ $imovel->imagem }}" class="img-fluid" alt="{{ $imovel->nome }}">
+            </div>
+            <div id="image-container" class="col-md-6">
+                <h4>{{ $imovel->nome }}</h4>
+                <p class="imovel-city"><ion-icon name="business-outline"></ion-icon> {{ $imovel->cidade }}</p>
+                <p class="imovel-bairro"><ion-icon name="storefront-outline"></ion-icon> {{ $imovel->bairro }}</p>
+                <p class="imovel-owner"><ion-icon name="person-outline"></ion-icon> Proprietário</p>
+                <a href="#" class="btn btn-primary" id="imovel-submit">Agendar Visita</a>
+            </div>
+            <div class="col-md-12" id="description-container">
+                <h4><ion-icon name="newspaper-outline"></ion-icon> Detalhes do Imóvel:</h4>
+                <p class="imovel-description">{{ $imovel->descricao }}</p>
+            </div>
+        </div>
+    </div>
+
+@endsection
