@@ -2,3 +2,95 @@
     color : blueviolet;
     font-family: 'Montserrat', sans-serif;
 }
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background-color: cornflowerblue;
+    border-bottom: 1px solid #cccccc;
+}
+
+.row{
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-primary{
+   background-color: blueviolet;
+   border: 2px solid violet;
+}
+.btn-primary:hover{
+   background-color: violet;
+   border: 2px solid blueviolet;
+}
+
+#folder_pool{
+   width: 50px; 
+}
+
+#search-container{
+    background-image: url("../img/folder_pool.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    padding: 50px;
+    text-align: center;
+}
+#busca-imovel-btn{
+    margin-top: 10px;
+}
+
+#search-container h4{
+    color: rgba(0,0,0,.9);
+    margin-bottom: 30px;
+}
+
+#search-container form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#imoveis-container{
+    padding: 30px;
+}
+
+#cards-container{
+    display: flex;
+}
+
+#imoveis-container .card{
+    flex: 1 1 0;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: 5px;
+
+}
+#imoveis-container img{
+    max-height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#cadastrar-btn{
+    margin-top: 15px;
+}
+#imovel-cadastrar-container{
+    margin-top: 15px;
+}
+.card-descricao{
+    max-height: 100px;
+}
+footer{
+    text-align: center;
+    background-color:  #edf2fb;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

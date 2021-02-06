@@ -4,21 +4,33 @@
 
 @section('content')
 
-    <img src="/img/folder_pool.jpg" alt="Folder">
-        <h1 id="init">Seja bem vindo a nossa pagina {{$nome}}</h1>
+        <div id="search-container" class="col-md-12">
+            <h4>Busque o que deseja</h4>
+                <form action="">
+                    <input type="text" id="search" name="search" class="form-control" placeholder="Buscar....">
+                </form>
+            <button id="busca-imovel-btn" class="btn btn-primary" type="submit">Search</button>
+        </div>
 
-        @if(10 >5)
-            <p>Lista de imoveis</p>
-        @endif
+        <div id="imoveis-container" class="col-md-12">
+           <h4>Em Destaque</h4>
 
-        {{-- Esta parte varre a listagem da Home --}}
-        
-        @for($i = 0; $i < count($imoveis); $i++)
-            <p>{{$imoveis[$i]}}</p>
-            
-            @foreach($regioes as $regiao)
-                <p>{{ $regiao }}</p>
-            @endforeach
-        @endfor
+           {{-- Esta parte varre a listagem da Home --}}
+
+           <div id="cards-container" class="row">
+                @foreach($imoveis as $imovel)
+                    <div class="card col-md-3">
+                        <img src="/img/banner_wine.jpg" alt="{{ $imovel->nome }}">
+                        <div class="card-body">
+                            <p class="card-date">03-02-2021</p>
+                            <h6 class="card-title">{{ $imovel->nome }} {{ $imovel->metragem }} m2</h6>
+                            <p class="card-bairro">{{ $imovel->bairro }} </p>
+                            <p class="card-descricao">{{  substr($imovel->descricao, 0, 100) }} {{ (strlen($imovel->descricao) > 100) ? '...' : '' }} </p>
+                            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                        </div>
+                    </div>
+                 @endforeach
+           </div>
+        </div>
 
 @endsection
