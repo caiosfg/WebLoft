@@ -8,9 +8,21 @@ use App\Models\Imoveis;
 class ImovelController extends Controller
 {
     public function index(){
-        $imoveis = Imoveis::all();
+        
+        $search = request('search');
 
-        return view('welcome',['imoveis' => $imoveis]);
+        if($search){
+
+            $imoveis = Imoveis::where([
+                ['bairro', 'like', '%'.$search.'%']
+            ])->get();
+
+        }else{
+
+            $imoveis = Imoveis::all();
+        }
+
+        return view('welcome',['imoveis' => $imoveis, 'search' => $search]);
 
     }
     public function cadastrar(){
@@ -28,6 +40,7 @@ class ImovelController extends Controller
         $imovel->rua = $request->rua;
         $imovel->numero = $request->numero;
         $imovel->status = 1;
+        $imovel->items = $request->items;
 
         //Upload de Imagens
         if($request->hasFile('imagem') && $request->file('imagem')->isValid()){

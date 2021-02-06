@@ -22,10 +22,3 @@ Route::post('/imoveis', [ImovelController::class, 'salvar']);
 
 Route::get('/contatos', [ContatosController::class, 'faleConosco']);
 
-Route::get('/imoveis', function () {
-    
-    $busca = request('search');
-
-    return view('imoveis', ['busca' => $busca]);
-});
-

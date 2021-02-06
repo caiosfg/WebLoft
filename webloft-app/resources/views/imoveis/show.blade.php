@@ -15,10 +15,16 @@
                 <p class="imovel-bairro"><ion-icon name="storefront-outline"></ion-icon> {{ $imovel->bairro }}</p>
                 <p class="imovel-owner"><ion-icon name="person-outline"></ion-icon> Proprietário</p>
                 <a href="#" class="btn btn-primary" id="imovel-submit">Agendar Visita</a>
+                <h4 class="items-head">Comodidades</h4>
+                <ul class="items-list">
+                    @foreach($imovel->items as $item)
+                        <li><ion-icon name="checkmark-done-outline"></ion-icon> {{ $item }}</li>
+                    @endforeach
+                </ul>
             </div>
             <div class="col-md-12" id="description-container">
                 <h4><ion-icon name="newspaper-outline"></ion-icon> Detalhes do Imóvel:</h4>
-                <p class="imovel-description">{{ $imovel->descricao }}</p>
+                <p class="imovel-description"><span> {{ $imovel->descricao }}</span></p>
             </div>
         </div>
     </div>

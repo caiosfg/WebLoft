@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Imoveis extends Model
 {
-    //
+    protected $casts =[
+        'items' => 'array'
+    ];
 }

@@ -112,5 +112,14 @@ footer{
 #info-container p{
     margin: 0;
     display: flex;
-
+}
+.items-head{
+    margin-top: 10px;
+}
+.items-list{
+  list-style: none;  
+  padding-left: 0;
+}
+.items-list li{
+  display: flex;
 }

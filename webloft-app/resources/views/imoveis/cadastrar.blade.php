@@ -37,6 +37,27 @@
             <input type="number" class="form-control" id="numero" name="numero">
         </div>
         <div class="form-group">
+            <label for="title">Selecione características :</label>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Playground">Playground
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Piscina">Piscina
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Portaria">Portaria
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Churrasqueira">Churrasqueira
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Academia">Academia
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="items[]" value="Garagem">Garagem
+            </div>
+        </div>
+        <div class="form-group">
             <label for="image">Foto:</label>
             <input type="file" class="form-control-file" id="imagem" name="imagem">
         </div>
