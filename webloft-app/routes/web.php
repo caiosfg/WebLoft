@@ -16,7 +16,7 @@ use App\Http\Controllers\ContatosController;
 */
 
 Route::get('/', [ImovelController::class, 'index']); 
-Route::get('/imoveis/cadastrar', [ImovelController::class, 'cadastrar']); 
+Route::get('/imoveis/cadastrar', [ImovelController::class, 'cadastrar'])->middleware('auth'); 
 Route::get('/imoveis/{id}', [ImovelController::class, 'show']); 
 Route::post('/imoveis', [ImovelController::class, 'salvar']); 
 

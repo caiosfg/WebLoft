@@ -30,9 +30,6 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="/imoveis">Quero Alugar</a>
-                     </li>
-                     <li class="nav-item">
                          <a class="nav-link active" href="/imoveis/cadastrar">Quero Anunciar</a>
                      </li>
                      <li class="nav-item">

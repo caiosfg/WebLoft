@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Imoveis;
+use App\Models\User;
 
 class ImovelController extends Controller
 {
@@ -53,13 +54,17 @@ class ImovelController extends Controller
             $imovel->imagem = $imageName;
         }
 
+        $user = auth()->user();
+        $imovel->user_id = $user->id;
+
         $imovel->save();
 
         return redirect('/')->with('msg', 'Imóvel cadastrado na base');
     }
     public function show($id){
         $imovel = Imoveis::findOrFail($id);
+        $imovelOwner = User::where('id', $imovel->user_id)->first()->toArray();
 
-        return view('imoveis.show', ['imovel' => $imovel]);
+        return view('imoveis.show', ['imovel' => $imovel, 'imovelOwner' => $imovelOwner]);
     }
 }
