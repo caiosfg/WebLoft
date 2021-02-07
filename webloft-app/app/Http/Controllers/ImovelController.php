@@ -34,6 +34,7 @@ class ImovelController extends Controller
         $imovel =  new Imoveis;
 
         $imovel->nome = $request->nome;
+        $imovel->price = $request->price;
         $imovel->metragem = $request->metragem;
         $imovel->descricao = $request->descricao;
         $imovel->bairro = $request->bairro;

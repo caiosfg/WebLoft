@@ -14,7 +14,7 @@
                 <p class="imovel-city"><ion-icon name="business-outline"></ion-icon> {{ $imovel->cidade }}</p>
                 <p class="imovel-bairro"><ion-icon name="storefront-outline"></ion-icon> {{ $imovel->bairro }}</p>
                 <p class="imovel-owner"><ion-icon name="person-outline"></ion-icon> Proprietário : {{ $imovelOwner['name'] }}</p>
-                <a href="#" class="btn btn-primary" id="imovel-submit">Agendar Visita</a>
+                <p class="imovel-owner"><ion-icon name="card-outline"></ion-icon> Preço : {{"R$ " .number_format($imovel->price,2,",",".") }}</p>
                 <h4 class="items-head">Comodidades</h4>
                 <ul class="items-list">
                     @foreach($imovel->items as $item)

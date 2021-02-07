@@ -13,6 +13,10 @@
             <input type="text" class="form-control" id="nome" name="nome" placeholder="Título do seu Imóvel">
         </div>
         <div class="form-group">
+            <label for="title">Preço:</label>
+            <input type="number" min="0.00" max="10000.00" step="0.01" id="price" name="price" placeholder="0.00"/>
+        </div>
+        <div class="form-group">
             <label for="title">Metragem:</label>
             <input type="number" class="form-control" id="metragem" name="metragem" placeholder="Metragem do seu Imóvel">
         </div>

@@ -32,9 +32,6 @@
                      <li class="nav-item">
                          <a class="nav-link active" href="/imoveis/cadastrar">Quero Anunciar</a>
                      </li>
-                     <li class="nav-item">
-                         <a class="nav-link active" href="/contatos">Contatos</a>
-                     </li>
                      @auth
                      <li class="nav-item">
                          <a class="nav-link active" href="/dashboard">Meus Imoveis</a>

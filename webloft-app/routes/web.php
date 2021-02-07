@@ -25,8 +25,6 @@ Route::delete('/imoveis/{id}', [ImovelController::class, 'destroy'])->middleware
 Route::put('/imoveis/update/{id}', [ImovelController::class, 'update'])->middleware('auth'); 
 
 
-Route::get('/contatos', [ContatosController::class, 'faleConosco']);
-
 
 
 
