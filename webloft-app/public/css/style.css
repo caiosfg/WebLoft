@@ -130,3 +130,6 @@ footer{
 .dashboard-title-container th{
     width: 25%;
 }
+.dashboard-imoveis-container form{
+    display: inline-block;
+}

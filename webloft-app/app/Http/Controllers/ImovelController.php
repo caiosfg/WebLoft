@@ -74,4 +74,10 @@ class ImovelController extends Controller
 
        return view('imoveis.dashboard', ['imoveis' => $imoveis]);
     }
+    public function destroy($id){
+
+        Imoveis::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg', 'Imóvel excluído com sucesso');
+    }
 }

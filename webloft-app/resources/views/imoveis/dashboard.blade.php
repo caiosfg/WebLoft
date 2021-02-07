@@ -24,7 +24,14 @@
                     <td scropt="row">{{ $loop->index + 1 }}</td>
                     <td><a href="/imoveis/{{ $imovel->id}}">{{ $imovel->nome}}</a></td>
                     <td>0</td>
-                    <td><a href="#">Editar</a> <a href="#">Deletar</a></td>
+                    <td>
+                        <a href="#" class="btn btn-info edit-btn"><ion-icon name="list-outline"></ion-icon> Editar</a> 
+                        <form action="/imoveis/{{$imovel->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="close-circle-outline"></ion-icon> Deletar</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

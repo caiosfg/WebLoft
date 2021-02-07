@@ -4,7 +4,7 @@
                     Web Loft
     </a>
 </h1>
-<p align="center"> Aplicação de cadastramento de imóveis e mostruário.</p>
+<p align="center"> Aplicação de cadastramento de imóveis e mostruário, com operações padrões CRUD.</p>
 
 <p align="center">
     <img src="https://img.shields.io/static/v1?label=PHP&message=8&color=7159c1&style=for-the-badge&logo=ghost"/>
@@ -15,5 +15,5 @@
 ### Requerimentos
 
 - [x] Aumentar memory_limit no PHP.ini (memory_limit=-1)
-- [ ] Versão mínima PHP 7.3.0. (utilizar versão 8)
+- [x] Versão mínima PHP 7.3.0. (utilizar versão 8)
 - [x] Composer 2.0.9
