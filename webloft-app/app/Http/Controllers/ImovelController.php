@@ -67,4 +67,11 @@ class ImovelController extends Controller
 
         return view('imoveis.show', ['imovel' => $imovel, 'imovelOwner' => $imovelOwner]);
     }
+    public function dashboard(){
+       $user = auth()->user();
+
+       $imoveis = $user->imoveis;
+
+       return view('imoveis.dashboard', ['imoveis' => $imoveis]);
+    }
 }
