@@ -80,4 +80,29 @@ class ImovelController extends Controller
 
         return redirect('/dashboard')->with('msg', 'Imóvel excluído com sucesso');
     }
+    public function edit($id){
+
+        $imovel = Imoveis::findOrFail($id);
+
+        return view('imoveis.edit', ['imovel' => $imovel]);
+    }
+    public function update(Request $request){
+
+        $data = $request->all();
+
+        //Upload de Imagens
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName().strtotime("now").".".$extension);
+
+            $requestImage->move(public_path('img/imoveis'), $imageName);
+            $data['imagem'] = $imageName;
+        }
+
+        Imoveis::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Imóvel editado com sucesso');
+    }
 }

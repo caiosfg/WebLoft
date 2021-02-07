@@ -18,9 +18,11 @@ use App\Http\Controllers\ContatosController;
 Route::get('/', [ImovelController::class, 'index']); 
 Route::get('/imoveis/cadastrar', [ImovelController::class, 'cadastrar'])->middleware('auth'); 
 Route::get('/imoveis/{id}', [ImovelController::class, 'show']); 
+Route::get('/imoveis/edit/{id}', [ImovelController::class, 'edit'])->middleware('auth'); 
 Route::get('/dashboard', [ImovelController::class, 'dashboard'])->middleware('auth'); 
 Route::post('/imoveis', [ImovelController::class, 'salvar']); 
-Route::delete('/imoveis/{id}', [ImovelController::class, 'destroy']); 
+Route::delete('/imoveis/{id}', [ImovelController::class, 'destroy'])->middleware('auth'); 
+Route::put('/imoveis/update/{id}', [ImovelController::class, 'update'])->middleware('auth'); 
 
 
 Route::get('/contatos', [ContatosController::class, 'faleConosco']);

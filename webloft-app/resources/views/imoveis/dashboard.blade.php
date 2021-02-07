@@ -25,7 +25,7 @@
                     <td><a href="/imoveis/{{ $imovel->id}}">{{ $imovel->nome}}</a></td>
                     <td>0</td>
                     <td>
-                        <a href="#" class="btn btn-info edit-btn"><ion-icon name="list-outline"></ion-icon> Editar</a> 
+                        <a href="/imoveis/edit/{{ $imovel->id }}" class="btn btn-info edit-btn"><ion-icon name="list-outline"></ion-icon> Editar</a> 
                         <form action="/imoveis/{{$imovel->id}}" method="POST">
                             @csrf
                             @method('DELETE')
