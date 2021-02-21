@@ -72,5 +72,29 @@
             <p>Web Loft &copy; 2021</p>
         </footer>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        @section('js')
+            <script type="text/javascript">
+                var teste = "https://maps.googleapis.com/maps/api/geocode/json?address={{ $imovel->rua.','.$imovel->numero}},{{ $imovel->cidade }}&key=AIzaSyAguy7ew8yFFChGqWNsmbWzn_OkfgCF-mE";
+            
+            $.ajax({
+                url: teste,
+                dataType: 'jsonp', 
+                success:function(data){
+                        var obj = jQuery.parseJSON(data);
+            
+                        var latitude = obj['results'][0]['geometry']['location'].lat
+                        var longitude = obj['results'][0]['geometry']['location'].lng
+            
+                        var latlon = latitude + "," + longitude;
+                        var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&key=AIzaSyAguy7ew8yFFChGqWNsmbWzn_OkfgCF-mE";
+                    
+                    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>"; latlon = latitude + "," + longitude;    
+                },
+                error:function(){
+            
+                }      
+            });
+            </script>
+        @endsection
     </body>
 </html>
