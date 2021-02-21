@@ -74,7 +74,7 @@
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         @section('js')
             <script type="text/javascript">
-                var teste = "https://maps.googleapis.com/maps/api/geocode/json?address={{ $imovel->rua.','.$imovel->numero}},{{ $imovel->cidade }}&key=AIzaSyAguy7ew8yFFChGqWNsmbWzn_OkfgCF-mE";
+                var teste = "https://maps.googleapis.com/maps/api/geocode/json?address={{ $imovel->rua.','.$imovel->numero}},{{ $imovel->cidade }}&key=XXXXXXXXXXXXXXXXXXXX-XX";
             
             $.ajax({
                 url: teste,
@@ -86,7 +86,7 @@
                         var longitude = obj['results'][0]['geometry']['location'].lng
             
                         var latlon = latitude + "," + longitude;
-                        var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&key=AIzaSyAguy7ew8yFFChGqWNsmbWzn_OkfgCF-mE";
+                        var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&key=XXXXXXXXXXXX-XX";
                     
                     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>"; latlon = latitude + "," + longitude;    
                 },
