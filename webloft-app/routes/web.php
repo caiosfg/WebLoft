@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImovelController;
 use App\Http\Controllers\ContatosController;
+use App\Http\Controllers\Admin\AdminUsers;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/dashboard', [ImovelController::class, 'dashboard'])->middleware('au
 Route::post('/imoveis', [ImovelController::class, 'salvar']); 
 Route::delete('/imoveis/{id}', [ImovelController::class, 'destroy'])->middleware('auth'); 
 Route::put('/imoveis/update/{id}', [ImovelController::class, 'update'])->middleware('auth'); 
+
+Route::match(['get','post'],'/check', [AdminUsers::class, 'getLifeCheck']); 
 
 
 
