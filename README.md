@@ -17,3 +17,4 @@
 - [x] Aumentar memory_limit no PHP.ini (memory_limit=-1)
 - [x] Versão mínima PHP 7.3.0. (utilizar versão 8)
 - [x] Composer 2.0.9
+- [] Solicitar PRs após alterações
